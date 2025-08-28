@@ -12,3 +12,40 @@ h2,h3{
     background-color: red;
     color: white;
 }
+
+/* child */
+/* 
+div>p{
+    background-color: blueviolet;
+    color: white;
+} */
+
+
+/* Descendent */
+/* div p{
+    background-color: greenyellow;
+    color: white;
+} */
+
+
+/* immediate sibling */
+/* div+p{
+    background-color: blue;
+    color: white;
+} */
+
+
+/* all siblings in forward direction */
+/* div~p{
+    background-color: yellow;
+    color: black;
+} */
+p:nth-child(4){
+    background-color: blue;
+    color: white;
+}
+
+div p:nth-of-type(1){
+    background-color: burlywood;
+    color: white;
+}
