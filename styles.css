@@ -1,3 +1,14 @@
 body{
-    background-color: green;
+    background-color: white;
+}
+
+
+h2,h3{
+    background-color: cadetblue;
+    color: white;
+}
+
+#para1{
+    background-color: red;
+    color: white;
 }
