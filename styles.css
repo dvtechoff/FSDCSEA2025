@@ -40,8 +40,8 @@ div>p{
     background-color: yellow;
     color: black;
 } */
-p:nth-child(4){
-    background-color: blue;
+h2:nth-child(2){
+    background-color: green;
     color: white;
 }
 
