@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f7f8fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            color: #333;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #4e89ff;
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #333;
+            text-align: left;
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            background: #f9f9f9;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4e89ff;
+            background: #f2f7ff;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #4e89ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            animation: bounce ease-in-out infinite;
+            animation-duration: 0.5s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        button:hover {
+            background: #2e5cb9;
+
+        }
+
+        #data {
+            margin-top: 25px;
+            background: #e6f7ff;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #333;
+            display: none;
+        }
+
+        .data-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Student Information</h2>
+        <form action="javascript:void(0)">
+            <label for="myName">Name</label>
+            <input type="text" id="myName" placeholder="Enter your name" required>
+
+            <label for="branch">Branch</label>
+            <input type="text" id="branch" placeholder="Enter your branch" required>
+
+            <label for="roll">Roll Number</label>
+            <input type="number" id="roll" placeholder="Enter your roll number" required>
+
+            <button type="button" onclick="display()">Submit</button>
+        </form>
+
+        <div id="data">
+            <div class="data-title">Entered Information</div>
+            <div id="studentInfo"></div>
+        </div>
+    </div>
+
+    <script>
+        function display() {
+            const myName = document.getElementById('myName').value;
+            const myBranch = document.getElementById('branch').value;
+            const myRoll = document.getElementById('roll').value;
+
+            // Check if all fields are filled
+            if (myName && myBranch && myRoll) {
+                document.getElementById('studentInfo').innerHTML = `Name: <strong>${myName}</strong><br>Branch: <strong>${myBranch}</strong><br>Roll Number: <strong>${myRoll}</strong>`;
+                document.getElementById('data').style.display = 'block';
+            } else {
+                alert('Please fill all fields.');
+            }
+        }
+    </script>
+</body>
+
+</html>
