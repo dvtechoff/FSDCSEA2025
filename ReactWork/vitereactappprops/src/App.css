@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+.book{
+    border: 1px solid black;
+    margin-left: 20px;
+    
+}
+
+.book .test{
+    font-size: 20px;
+}
+
+.book .heading{
+    font-size: 20px;
+}
+
+.image{
+    height:550px;
+}
